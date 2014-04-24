@@ -36,7 +36,7 @@ include(locate_template('/inc/qode_options.php'));
 	<div class="container clearfix">
 		<div class="container container_inner clearfix">
 			<?php the_content(); ?>
-			<?php echo do_shortcode('[product_categories parent=26]'); ?>
+			<?php echo do_shortcode('[product_categories columns=4 parent=26]'); ?>
 		</div>
 	</div>
 </div>

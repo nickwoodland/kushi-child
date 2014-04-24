@@ -28,11 +28,9 @@
 			<div class="projects_holder clearfix v4 hover_text no_space">
 				<?php //for ($i=1; $i<=4; $i++) { ?> 
 				<?php foreach ($box_slider_meta as $box_meta) : ?>
-					<?php print_r($box_meta); ?>
 					<?php $box_image = wp_get_attachment_image_src($box_meta['image'],'large',false); ?>
 					<article class="mix street-art  mix_all">
 						<div class="image_holder">
-
 							<span class="image">
 								<img src="<?php echo $box_image[0]; ?>" class="attachment-full wp-post-image" alt="5125680275_53c506c205_b">
 							</span>
@@ -41,15 +39,9 @@
 									<span class="hover_feature_holder_icons_outer">
 										<span class="hover_feature_holder_icons_inner">
 											<a class="preview" href="<?php echo $box_meta['link'];?>" />
-												<i class="fa fa-link fa-2x">
+												<i class="fa fa-link fa-3x">
 												</i>
 											</a>
-											<span class="portfolio_like">
-												<a class="qode-like" id="qode-like-80" title="Like this">
-													<i class="fa fa-heart fa-2x"></i>
-													<span class="qode-like-count">0</span>
-												</a>
-											</span>
 										</span>
 									</span>
 								</span>
