@@ -65,55 +65,43 @@ $brand_terms = get_terms('product_cat', $args);
 			<section class="parallax  not-column-inherit">
 				<section class="footer_parallax_noscroll" style="background-image: url(http://demo.qodeinteractive.com/elision/wp-content/uploads/2013/12/893.jpg);">
 					<div class="parallax_content center">
-						<div class="wpb_content_element separator  transparent center  " style="margin-top:70px;margin-bottom:40px;"></div>	
-						<div class="wpb_text_column wpb_content_element ">
-							<div class="wpb_wrapper">
-								<h2><span style="color: #ffffff;">Brands</span></h2>
-							</div> 
-						</div> 
-					<div class="wpb_content_element separator  transparent center  " style="margin-top:7px;margin-bottom:10px;"></div>
-					<div class="wpb_text_column wpb_content_element ">
-						<div class="wpb_wrapper">
-							<span style="color: #ffffff;">Ferri reque integre mea ut, eu eos vide errem</span>
-						</div> 
-					</div>
-					<div class="wpb_content_element separator  transparent center  " style="margin-top:18px;margin-bottom:14px;"></div>
-					<div class="qode_carousels_holder clearfix">
-						<div class="qode_carousels control_style">
-							<div class="flex-viewport" style="overflow: hidden; position: relative;">
-								<ul class="slides">
-									<?php foreach ($brand_terms as $term) : ?>
+						<div class="wpb_content_element separator  transparent center  " style="margin-top:40px;"></div>	
+						<div class="qode_carousels_holder clearfix">
+							<div class="qode_carousels control_style">
+								<div class="flex-viewport" style="overflow: hidden; position: relative;">
+									<ul class="slides">
+										<?php foreach ($brand_terms as $term) : ?>
 
-										<?php $thumbnail_id = get_woocommerce_term_meta( $term->term_taxonomy_id, 'thumbnail_id', true ); ?>
-			   							<?php $image = wp_get_attachment_url( $thumbnail_id ); ?>
+											<?php $thumbnail_id = get_woocommerce_term_meta( $term->term_taxonomy_id, 'thumbnail_id', true ); ?>
+				   							<?php $image = wp_get_attachment_url( $thumbnail_id ); ?>
 
-			   							<?php $brand_url = get_site_url()."/product-category/brands/".$term->slug; ?>
+				   							<?php $brand_url = get_site_url()."/product-category/brands/".$term->slug; ?>
 
-			   							<?php if ("" != $image) : ?>
-				   							<li>
-												<a href="<?php echo $brand_url; ?>" target="_self">
-													<span class="first_image_holder">
-														<div class="footer_parallax_image">
-															<img src="<?php echo $image; ?>" alt="<?php echo $term->name; ?>" draggable="false">
-														</div>
-													</span>
-												</a>
-											</li>
-										<?php endif; ?>
+				   							<?php if ("" != $image) : ?>
+					   							<li>
+													<a href="<?php echo $brand_url; ?>" target="_self">
+														<span class="first_image_holder">
+															<div class="footer_parallax_image">
+																<img src="<?php echo $image; ?>" alt="<?php echo $term->name; ?>" draggable="false">
+															</div>
+														</span>
+													</a>
+												</li>
+											<?php endif; ?>
 
-									<?php endforeach; ?>
+										<?php endforeach; ?>
+									</ul>
+								</div>
+								<ul class="flex-direction-nav">
+									<li>
+										<a class="flex-prev" href="#">Previous</a>
+									</li>
+									<li>
+										<a class="flex-next" href="#">Next</a>
+									</li>
 								</ul>
 							</div>
-							<ul class="flex-direction-nav">
-								<li>
-									<a class="flex-prev" href="#">Previous</a>
-								</li>
-								<li>
-									<a class="flex-next" href="#">Next</a>
-								</li>
-							</ul>
 						</div>
-					</div>
 					</div>
 				</section>
 			</section>
