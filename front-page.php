@@ -65,6 +65,94 @@
 		</div>
 	</div>
 	<div class="container container_inner container_frontpage clearfix">
+		<h2 style="text-align: center;">What Do We Do?</h2>
+		<div  class="wpb_row vc_row-fluid" style="text-align:left;">
+			<div class="vc_span3 wpb_column column_container">
+				<div class="wpb_wrapper">
+					<div class='q_icon_with_title very_large  circle center'>
+						<a href="category/local-industry">
+							<div class="icon_holder q_icon_animation" style=" transition-delay: 1ms; -webkit-transition-delay: 1ms; -moz-transition-delay: 1ms; -o-transition-delay: 1ms;">
+								<span class="fa-stack fa-5x " style="">
+									<i class="fa fa-circle fa-stack-base fa-stack-2x" style="color: #272727;"></i>
+									<i class="fa fa-map-marker fa-stack-1x" style="color: #ffffff;"></i>
+								</span>
+							</div>
+						</a>
+						<div class="icon_text_holder">
+							<div class="icon_text_inner" style="">
+								<h3 class="icon_title" style="color: #1d181f">Local Industry</h3>
+								<p style=''>And a sentence here to explain about the topic</p>
+							</div>
+						</div>
+					</div>
+				</div> 
+			</div> 
+
+			<div class="vc_span3 wpb_column column_container">
+				<div class="wpb_wrapper">
+					<div class='q_icon_with_title very_large  circle center'>
+						<a href="category/ethics">
+							<div class="icon_holder q_icon_animation" style=" transition-delay: 1ms; -webkit-transition-delay: 1ms; -moz-transition-delay: 1ms; -o-transition-delay: 1ms;">
+								<span class="fa-stack fa-5x " style="">
+									<i class="fa fa-circle fa-stack-base fa-stack-2x" style="color: #272727;"></i>
+									<i class="fa fa-globe fa-stack-1x" style="color: #ffffff;"></i>
+								</span>
+							</div>
+						</a>
+						<div class="icon_text_holder">
+							<div class="icon_text_inner" style="">
+								<h3 class="icon_title" style="color: #1d181f">Ethics</h3>
+								<p style=''>And a sentence here to explain about the topic</p>
+							</div>
+						</div>
+					</div>
+				</div> 
+			</div> 
+
+			<div class="vc_span3 wpb_column column_container">
+				<div class="wpb_wrapper">
+					<div class='q_icon_with_title very_large  circle center'>
+						<a href="category/artists">
+							<div class="icon_holder q_icon_animation" style=" transition-delay: 1ms; -webkit-transition-delay: 1ms; -moz-transition-delay: 1ms; -o-transition-delay: 1ms;">
+								<span class="fa-stack fa-5x " style="">
+									<i class="fa fa-circle fa-stack-base fa-stack-2x" style="color: #272727;"></i>
+									<i class="fa fa-pencil fa-stack-1x" style="color: #ffffff;"></i>
+								</span>
+							</div>
+						</a>
+						<div class="icon_text_holder">
+							<div class="icon_text_inner" style="">
+								<h3 class="icon_title" style="color: #1d181f">Artists</h3>
+								<p style=''>And a sentence here to explain about the topic</p>
+							</div>
+						</div>
+					</div>
+				</div> 
+			</div> 
+
+			<div class="vc_span3 wpb_column column_container">
+				<div class="wpb_wrapper">
+						<div class='q_icon_with_title very_large  circle center'>
+							<a href="category/music">
+								<div class="icon_holder q_icon_animation" style=" transition-delay: 1ms; -webkit-transition-delay: 1ms; -moz-transition-delay: 1ms; -o-transition-delay: 1ms;">
+									<span class="fa-stack fa-5x " style="">
+										<i class="fa fa-circle fa-stack-base fa-stack-2x" style="color: #272727;"></i>
+										<i class="fa fa-headphones fa-stack-1x" style="color: #ffffff;"></i>
+									</span>
+								</div>
+							</a>
+							<div class="icon_text_holder">
+								<div class="icon_text_inner" style="">
+									<h3 class="icon_title" style="color: #1d181f">Music</h3>
+									<p style=''>And a sentence here to explain about the topic</p>
+								</div>
+							</div>
+						</div>
+
+				</div> 
+			</div> 
+		</div>
+
 		<?php the_content(); ?>
 	</div>
 </div>
