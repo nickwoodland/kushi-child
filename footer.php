@@ -65,7 +65,7 @@ $brand_terms = get_terms('product_cat', $args);
 			<section class="parallax  not-column-inherit">
 				<section class="footer_parallax_noscroll" style="background-image: url(http://demo.qodeinteractive.com/elision/wp-content/uploads/2013/12/893.jpg);">
 					<div class="parallax_content center">
-						<div class="wpb_content_element separator  transparent center  " style="margin-top:40px;"></div>	
+						<div class="wpb_content_element separator  transparent center  " style="margin-top:50px;"></div>	
 						<div class="qode_carousels_holder clearfix">
 							<div class="qode_carousels control_style">
 								<div class="flex-viewport" style="overflow: hidden; position: relative;">
@@ -102,6 +102,7 @@ $brand_terms = get_terms('product_cat', $args);
 								</ul>
 							</div>
 						</div>
+						<div class="wpb_content_element separator  transparent center  " style="margin-bottom:10px;"></div>	
 					</div>
 				</section>
 			</section>

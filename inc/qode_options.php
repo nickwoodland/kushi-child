@@ -76,4 +76,5 @@ if($qode_page_title_style == "title_on_bottom") {
 	$height_class = " title_on_bottom";
 }
 
+
 ?>
