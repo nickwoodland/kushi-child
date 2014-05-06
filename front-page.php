@@ -3,11 +3,15 @@
 
 <div class="q_slider">
 	<div class="q_slider_inner">
+	<?php if(!is_tablet() && !is_mobile()): ?>
 		<?php $revslider = get_post_meta($id, "qode_revolution-slider", true); ?>
 		<?php echo do_shortcode($revslider); ?>
+	<?php endif; ?>
 	</div>
 </div>
-<?php $box_slider_meta = get_post_meta( $post->ID, 'front_page_group', false ); ?>
+<?php // $box_slider_meta = get_post_meta( $post->ID, 'front_page_group', false ); ?>
+<?php $box_slider_meta = kushi_fp_box_meta($post->ID); ?>
+
 <div class="container">
 	<div class="strapline">
 		<?php $strapline_heading = get_post_meta( $post->ID, 'strapline_heading', false); ?>

@@ -70,10 +70,15 @@ $brand_terms = get_terms('product_cat', $args);
 							<div class="qode_carousels control_style">
 								<div class="flex-viewport" style="overflow: hidden; position: relative;">
 									<ul class="slides">
+										<?php $count = 0 ?>
 										<?php foreach ($brand_terms as $term) : ?>
+											<?php $count++; ?>
 
-											<?php $thumbnail_id = get_woocommerce_term_meta( $term->term_taxonomy_id, 'thumbnail_id', true ); ?>
-				   							<?php $image = wp_get_attachment_url( $thumbnail_id ); ?>
+
+											<?php // $thumbnail_id = get_woocommerce_term_meta( $term->term_taxonomy_id, 'thumbnail_id', true ); ?>
+				   							<?php // $image = wp_get_attachment_url( $thumbnail_id ); ?>
+
+				   							<?php $image = kushi_footer_logo_meta($count, $term); ?>
 
 				   							<?php $brand_url = get_site_url()."/product-category/brands/".$term->slug; ?>
 
