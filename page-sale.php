@@ -38,7 +38,7 @@ include(locate_template('/inc/qode_options.php'));
 			<div class="two_columns_75_25 grid2 clearfix">
 				<div class="column1">
 					<?php the_content(); ?>
-					<?php echo do_shortcode('[sale_products per_page="12" columns="3"]'); ?>
+					<?php echo do_shortcode('[sale_products per_page="24" columns="3"]'); ?>
 				</div>
 				<div class="column2">
 					<?php get_sidebar();?>

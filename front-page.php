@@ -27,10 +27,9 @@
 			</p>
 		</div>
 	</div>
-	<div class="container clearfix">
-		<div class="projects_holder_outer v4">
+	<div class="container clearfix" id="boxes" name="boxes">
+		<div class="projects_holder_outer v4" >
 			<div class="projects_holder clearfix v4 hover_text no_space">
-				<?php //for ($i=1; $i<=4; $i++) { ?> 
 				<?php foreach ($box_slider_meta as $box_meta) : ?>
 					<?php $box_image = wp_get_attachment_image_src($box_meta['image'],'large',false); ?>
 					<article class="mix street-art  mix_all">
@@ -69,7 +68,6 @@
 		</div>
 	</div>
 	<div class="container container_inner container_frontpage clearfix">
-		<h2 style="text-align: center;">What Do We Do?</h2>
 		<div  class="wpb_row vc_row-fluid" style="text-align:left;">
 			<div class="vc_span3 wpb_column column_container">
 				<div class="wpb_wrapper">
@@ -85,7 +83,7 @@
 						<div class="icon_text_holder">
 							<div class="icon_text_inner" style="">
 								<h3 class="icon_title" style="color: #1d181f">Local Industry</h3>
-								<p style=''>And a sentence here to explain about the topic</p>
+								<p style=''>Check out the thriving local business, venues and events.</p>
 							</div>
 						</div>
 					</div>
@@ -106,7 +104,7 @@
 						<div class="icon_text_holder">
 							<div class="icon_text_inner" style="">
 								<h3 class="icon_title" style="color: #1d181f">Ethics</h3>
-								<p style=''>And a sentence here to explain about the topic</p>
+								<p style=''>Learn how we're striving to be a more sustainable and fair company.</p>
 							</div>
 						</div>
 					</div>
@@ -127,7 +125,7 @@
 						<div class="icon_text_holder">
 							<div class="icon_text_inner" style="">
 								<h3 class="icon_title" style="color: #1d181f">Artists</h3>
-								<p style=''>And a sentence here to explain about the topic</p>
+								<p style=''>Have a browse of the artists that inspire what we do.</p>
 							</div>
 						</div>
 					</div>
@@ -148,7 +146,7 @@
 							<div class="icon_text_holder">
 								<div class="icon_text_inner" style="">
 									<h3 class="icon_title" style="color: #1d181f">Music</h3>
-									<p style=''>And a sentence here to explain about the topic</p>
+									<p style=''>Discover music we've been playing in the shop.</p>
 								</div>
 							</div>
 						</div>

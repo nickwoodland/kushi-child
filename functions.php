@@ -44,7 +44,9 @@ Function kushi_footer_logo_meta($counter, $term) {
 
 	$transient_name = "kushi_footer_logo_meta".$counter;
 
-	if ( false === ( $fp_box_meta = get_transient( $transient_name ) ) ) {
+
+
+	if ( false === ( $image = get_transient( $transient_name ) ) ) {
 
 		$thumbnail_id = get_woocommerce_term_meta( $term->term_taxonomy_id, 'thumbnail_id', true ); 
 		$image = wp_get_attachment_url( $thumbnail_id );
