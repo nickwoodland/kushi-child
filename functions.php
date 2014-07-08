@@ -6,6 +6,7 @@ Function wp_schools_enqueue_scripts() {
 wp_register_style( 'childstyle', get_stylesheet_directory_uri() . '/style.css'  );
 wp_enqueue_style( 'childstyle' );
 }
+add_action( 'wp_enqueue_scripts', 'wpse61738_non_cached_stylesheet', 10 );
 add_action( 'wp_enqueue_scripts', 'wp_schools_enqueue_scripts', 11);
 
 function remove_some_widgets(){
@@ -61,4 +62,15 @@ Function kushi_footer_logo_meta($counter, $term) {
 
     	return $image;   	
 	}
+}
+
+
+function wpse61738_non_cached_stylesheet()
+{
+    wp_enqueue_style( 
+        'childstyle',
+        get_stylesheet_directory_uri().'/style.css',
+        array(),
+        filemtime( get_stylesheet_directory().'/style.css' )
+    );
 }

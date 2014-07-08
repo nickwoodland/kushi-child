@@ -1,14 +1,19 @@
 <?php get_header(); ?>
 <?php include(locate_template('/inc/qode_options.php')); ?>
 
-<div class="q_slider">
-	<div class="q_slider_inner">
-	<?php if(!is_tablet() && !is_mobile()): ?>
-		<?php $revslider = get_post_meta($id, "qode_revolution-slider", true); ?>
-		<?php echo do_shortcode($revslider); ?>
-	<?php endif; ?>
+<?php if( !wp_is_mobile() ): ?>
+	<div class="q_slider">
+		<div class="q_slider_inner">
+			<?php $revslider = get_post_meta($id, "qode_revolution-slider", true); ?>
+			<?php echo do_shortcode($revslider); ?>
+		</div>
 	</div>
-</div>
+	<div class="main_cta">
+		<a href="#boxes">
+			Find Out More About Kushi...		
+		</a>
+	</div>
+<?php endif; ?>
 <?php // $box_slider_meta = get_post_meta( $post->ID, 'front_page_group', false ); ?>
 <?php $box_slider_meta = kushi_fp_box_meta($post->ID); ?>
 
