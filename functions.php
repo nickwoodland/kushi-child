@@ -74,3 +74,81 @@ function wpse61738_non_cached_stylesheet()
         filemtime( get_stylesheet_directory().'/style.css' )
     );
 }
+
+function epos_csv_parse( $csv ) {
+		//global $post;
+
+	   $products = $fields = array(); $i = 0;
+
+	   $handle = @fopen($csv, "r");
+
+	   if ($handle) {
+	       while (($row = fgetcsv($handle, 4096)) !== false) {
+	           if (empty($fields)) {
+	               $fields = $row;
+	               continue;
+	           }
+	           foreach ($row as $k=>$value) {
+	               $products[$i][$k] = $value;
+	           }
+	           $i++;
+	       }
+	       if (!feof($handle)) {
+	           echo "Error: unexpected fgets() fail\n";
+	       }
+	       fclose($handle);
+
+	       epos_csv_update($products);
+	   }
+	   else {
+	   		echo "unable to open CSV file";
+	   }
+}
+
+function epos_csv_update( $products ) {
+        global $post;
+
+		$logname = "log-".date('Y-m-d-G-i');
+
+	    $updatelog = fopen($logname.".txt", "w");
+
+		foreach ($products as $product){
+
+	       $args = array(
+	               'post_type' => array('product', 'product_variation'),
+	               'posts_per_page' => -1,
+	               'meta_key' => '_sku',
+	               'meta_value' => $product[3],
+	           );
+
+           $prodq = new WP_Query($args);
+
+          if ($prodq->have_posts() ) { 
+               while ($prodq->have_posts()): $prodq->the_post();
+
+                    print_r($post);
+
+                   $custom_meta = get_post_meta($post->ID); 
+
+                   update_post_meta($post->ID, '_stock', $product[8]);
+
+                 /* echo "<pre>"; 
+                   print_r($product); 
+                   echo "</pre>";*/
+
+                   fwrite($updatelog, "Line: ".$product[0].", SKU: ".$product[3]." updated.".PHP_EOL);
+               endwhile;
+           } else {
+               echo "Line: ".$product[0].", SKU: ".$product[3]." not found.<br  />";
+               fwrite($updatelog, "Line: ".$product[0].", SKU: ".$product[3]." not found.".PHP_EOL);
+           };
+	                           
+	                   
+	   }
+	   fclose($updatelog);
+       wp_reset_query();
+}
+
+function return_latest_orders( $id ) {
+
+}

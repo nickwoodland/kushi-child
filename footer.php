@@ -63,7 +63,7 @@ $brand_terms = get_terms('product_cat', $args);
 
 		<div class="full_width footer_parallax">
 			<section class="parallax  not-column-inherit">
-				<section class="footer_parallax_noscroll" style="background-image: url(http://kushi-shop.artzweb.net/wp-content/uploads/2014/06/parallax-bg.jpg);">
+				<section class="footer_parallax_noscroll" style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/parallax-bg.jpg);">
 					<div class="parallax_content center">
 						<div class="wpb_content_element separator  transparent center  " style="margin-top:50px;"></div>	
 						<div class="qode_carousels_holder clearfix">
