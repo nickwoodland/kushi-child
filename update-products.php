@@ -1,8 +1,30 @@
 <?php require_once('../../../wp-load.php'); ?>
 
+<?php 	
+//$logname = "test-output-log-".date('Y-m-d-G-i');
+//$updatelog = fopen($logname.".txt", "w");
+
+
+if ( isset($_POST['uploadedfile']) ) :
+
+$products_csv = array_map('str_getcsv', explode("/n", $_POST['uploadedfile']));
+
+epos_csv_update($products_csv);
+
+else :
+
+    echo "No file selected <br />";
+
+endif;
+//fwrite($updatelog, print_r($rows,true).PHP_EOL);
+//fwrite($updatelog, print_r($_POST['uploadedfile'],true).PHP_EOL);
+//fwrite($updatelog, print_r($_FILES,true).PHP_EOL);
+
+ ?>
+
 <?php // http://stackoverflow.com/questions/5593473/how-to-upload-and-parse-a-csv-file-in-php ?>
 
-<?php
+<?php /*
 echo "<pre>"; 
 print_r($_FILES); 
 echo "</pre>";
@@ -39,12 +61,12 @@ if ( isset($_POST["submit"]) ) {
             move_uploaded_file($_FILES["file"]["tmp_name"], "upload/" . $storagename);
             echo "Stored in: " . "upload/" . $_FILES["file"]["name"] . "<br />";
             }
-        }*/
+        }
         }
     }    
 } 
 else {
     echo "No file selected <br />";
 }
-
+*/
 ?>

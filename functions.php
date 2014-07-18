@@ -106,6 +106,7 @@ function epos_csv_parse( $csv ) {
 }
 
 function epos_csv_update( $products ) {
+
         global $post;
 
 		$logname = "log-".date('Y-m-d-G-i');
@@ -118,19 +119,21 @@ function epos_csv_update( $products ) {
 	               'post_type' => array('product', 'product_variation'),
 	               'posts_per_page' => -1,
 	               'meta_key' => '_sku',
-	               'meta_value' => $product[3],
+	               'meta_value' => stripslashes($product[3]),
 	           );
+
+           print_r($args);
 
            $prodq = new WP_Query($args);
 
           if ($prodq->have_posts() ) { 
                while ($prodq->have_posts()): $prodq->the_post();
 
-                    print_r($post);
+                   print_r($post);
 
                    $custom_meta = get_post_meta($post->ID); 
 
-                   update_post_meta($post->ID, '_stock', $product[8]);
+                   update_post_meta($post->ID, '_stock', stripslashes($product[8]));
 
                  /* echo "<pre>"; 
                    print_r($product); 
@@ -139,6 +142,7 @@ function epos_csv_update( $products ) {
                    fwrite($updatelog, "Line: ".$product[0].", SKU: ".$product[3]." updated.".PHP_EOL);
                endwhile;
            } else {
+            
                echo "Line: ".$product[0].", SKU: ".$product[3]." not found.<br  />";
                fwrite($updatelog, "Line: ".$product[0].", SKU: ".$product[3]." not found.".PHP_EOL);
            };
