@@ -109,18 +109,18 @@ function epos_csv_update( $products ) {
 
         global $post;
 
-		$logname = "log-".date('Y-m-d-G-i');
+        $logname = "log-".date('Y-m-d-G-i');
 
-	    $updatelog = fopen($logname.".txt", "w");
+        $updatelog = fopen($logname.".txt", "w");
 
-		foreach ($products as $product){
+        foreach ($products as $product){
 
-	       $args = array(
-	               'post_type' => array('product', 'product_variation'),
-	               'posts_per_page' => -1,
-	               'meta_key' => '_sku',
-	               'meta_value' => stripslashes($product[3]),
-	           );
+           $args = array(
+                   'post_type' => array('product', 'product_variation'),
+                   'posts_per_page' => -1,
+                   'meta_key' => '_sku',
+                   'meta_value' => str_replace('"', '', stripslashes($product[3])),
+               );
 
            print_r($args);
 
@@ -133,7 +133,7 @@ function epos_csv_update( $products ) {
 
                    $custom_meta = get_post_meta($post->ID); 
 
-                   update_post_meta($post->ID, '_stock', stripslashes($product[8]));
+                   update_post_meta($post->ID, '_stock', str_replace('"', '', stripslashes($product[8])));
 
                  /* echo "<pre>"; 
                    print_r($product); 
@@ -146,10 +146,10 @@ function epos_csv_update( $products ) {
                echo "Line: ".$product[0].", SKU: ".$product[3]." not found.<br  />";
                fwrite($updatelog, "Line: ".$product[0].", SKU: ".$product[3]." not found.".PHP_EOL);
            };
-	                           
-	                   
-	   }
-	   fclose($updatelog);
+                               
+                       
+       }
+       fclose($updatelog);
        wp_reset_query();
 }
 
