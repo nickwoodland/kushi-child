@@ -7,7 +7,7 @@
 
 if ( isset($_POST['uploadedfile']) ) :
 
-$products_csv = array_map('str_getcsv', explode("/n", $_POST['uploadedfile']));
+$products_csv = array_map('str_getcsv', explode(PHP_EOL, $_POST['uploadedfile']));
 
 epos_csv_update($products_csv);
 
