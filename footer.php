@@ -59,7 +59,7 @@ $brand_terms = get_terms('product_cat', $args);
 ?>
 
 <footer>
-	<?php if ("" != $brand_terms) : ?>
+	<?php if ("" != $brand_terms && false) : ?>
 
 		<div class="full_width footer_parallax">
 			<section class="parallax  not-column-inherit">

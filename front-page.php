@@ -9,7 +9,7 @@
 		</div>
 	</div>
 	<div class="main_cta">
-		<a href="#boxes">
+		<a href="#strapline">
 			Find Out More About Kushi...		
 		</a>
 	</div>
@@ -18,7 +18,7 @@
 <?php $box_slider_meta = kushi_fp_box_meta($post->ID); ?>
 
 <div class="container">
-	<div class="strapline">
+	<div class="strapline" id="">
 		<?php $strapline_heading = get_post_meta( $post->ID, 'strapline_heading', false); ?>
 		<?php if ($strapline_heading) : ?>
 			<h2><?php echo $strapline_heading[0];  ?></h2>
@@ -56,7 +56,7 @@
 								<div class="hover_feature_holder_title">
 									<div class="hover_feature_holder_title_inner">
 										<h4 class="portfolio_title">
-											<a href="http://localhost/sites/kushi/portfolio_page/roshambo/"><?php echo $box_meta['heading'];?></a>
+											<a href="<?php echo $box_meta['link'];?>"><?php echo $box_meta['heading'];?></a>
 										</h4>
 										<span class="project_category"><?php echo $box_meta['text'];?></span>
 									</div>
@@ -73,94 +73,18 @@
 		</div>
 	</div>
 	<div class="container container_inner container_frontpage clearfix">
-		<div  class="wpb_row vc_row-fluid" style="text-align:left;">
-			<div class="vc_span3 wpb_column column_container">
+		<div class="wpb_row vc_row-fluid" style="text-align:left;">
+			<div class="vc_span6 wpb_column column_container">
 				<div class="wpb_wrapper">
-					<div class='q_icon_with_title very_large  circle center'>
-						<a href="category/local-industry">
-							<div class="icon_holder q_icon_animation" style=" transition-delay: 1ms; -webkit-transition-delay: 1ms; -moz-transition-delay: 1ms; -o-transition-delay: 1ms;">
-								<span class="fa-stack fa-5x " style="">
-									<i class="fa fa-circle fa-stack-base fa-stack-2x" style="color: #272727;"></i>
-									<i class="fa fa-map-marker fa-stack-1x" style="color: #ffffff;"></i>
-								</span>
-							</div>
-						</a>
-						<div class="icon_text_holder">
-							<div class="icon_text_inner" style="">
-								<h3 class="icon_title" style="color: #1d181f">Local Industry</h3>
-								<p style=''>Check out the thriving local business, venues and events.</p>
-							</div>
-						</div>
-					</div>
+					<?php the_content(); ?>
 				</div> 
 			</div> 
-
-			<div class="vc_span3 wpb_column column_container">
+			<div class="vc_span6 wpb_column column_container">
 				<div class="wpb_wrapper">
-					<div class='q_icon_with_title very_large  circle center'>
-						<a href="category/ethics">
-							<div class="icon_holder q_icon_animation" style=" transition-delay: 1ms; -webkit-transition-delay: 1ms; -moz-transition-delay: 1ms; -o-transition-delay: 1ms;">
-								<span class="fa-stack fa-5x " style="">
-									<i class="fa fa-circle fa-stack-base fa-stack-2x" style="color: #272727;"></i>
-									<i class="fa fa-globe fa-stack-1x" style="color: #ffffff;"></i>
-								</span>
-							</div>
-						</a>
-						<div class="icon_text_holder">
-							<div class="icon_text_inner" style="">
-								<h3 class="icon_title" style="color: #1d181f">Ethics</h3>
-								<p style=''>Learn how we're striving to be a more sustainable and fair company.</p>
-							</div>
-						</div>
-					</div>
+					<?php the_post_thumbnail(); ?>
 				</div> 
 			</div> 
-
-			<div class="vc_span3 wpb_column column_container">
-				<div class="wpb_wrapper">
-					<div class='q_icon_with_title very_large  circle center'>
-						<a href="category/artists">
-							<div class="icon_holder q_icon_animation" style=" transition-delay: 1ms; -webkit-transition-delay: 1ms; -moz-transition-delay: 1ms; -o-transition-delay: 1ms;">
-								<span class="fa-stack fa-5x " style="">
-									<i class="fa fa-circle fa-stack-base fa-stack-2x" style="color: #272727;"></i>
-									<i class="fa fa-pencil fa-stack-1x" style="color: #ffffff;"></i>
-								</span>
-							</div>
-						</a>
-						<div class="icon_text_holder">
-							<div class="icon_text_inner" style="">
-								<h3 class="icon_title" style="color: #1d181f">Artists</h3>
-								<p style=''>Have a browse of the artists that inspire what we do.</p>
-							</div>
-						</div>
-					</div>
-				</div> 
-			</div> 
-
-			<div class="vc_span3 wpb_column column_container">
-				<div class="wpb_wrapper">
-						<div class='q_icon_with_title very_large  circle center'>
-							<a href="category/music">
-								<div class="icon_holder q_icon_animation" style=" transition-delay: 1ms; -webkit-transition-delay: 1ms; -moz-transition-delay: 1ms; -o-transition-delay: 1ms;">
-									<span class="fa-stack fa-5x " style="">
-										<i class="fa fa-circle fa-stack-base fa-stack-2x" style="color: #272727;"></i>
-										<i class="fa fa-headphones fa-stack-1x" style="color: #ffffff;"></i>
-									</span>
-								</div>
-							</a>
-							<div class="icon_text_holder">
-								<div class="icon_text_inner" style="">
-									<h3 class="icon_title" style="color: #1d181f">Music</h3>
-									<p style=''>Discover music we've been playing in the shop.</p>
-								</div>
-							</div>
-						</div>
-
-				</div> 
-			</div> 
-		</div>
-
-		<?php the_content(); ?>
+		</div>	
 	</div>
 </div>
 
