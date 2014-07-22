@@ -17,6 +17,12 @@ function remove_some_widgets(){
 add_action( 'widgets_init', 'remove_some_widgets', 11 );
 
 
+function load_js_fonts() {
+  wp_register_script('webfonts', get_template_stylesheet_directory_uri() . 'assets/js/webfont.js' );
+  wp_enqueue_script('webfonts');
+}
+add_action('wp_enqueue_scripts', 'load_js_fonts');
+
 require_once(dirname(__FILE__).'/inc/Custom-Meta-Boxes/custom-meta-boxes.php' );
 
 
@@ -75,7 +81,7 @@ function wpse61738_non_cached_stylesheet()
     );
 }
 
-function epos_csv_parse( $csv ) {
+/*function epos_csv_parse( $csv ) {
 		//global $post;
 
 	   $products = $fields = array(); $i = 0;
@@ -103,7 +109,7 @@ function epos_csv_parse( $csv ) {
 	   else {
 	   		echo "unable to open CSV file";
 	   }
-}
+}*/
 
 function epos_csv_update( $products ) {
 
