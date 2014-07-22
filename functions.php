@@ -105,52 +105,51 @@ function epos_csv_parse( $csv ) {
 	   }
 }
 
+
 function epos_csv_update( $products ) {
 
-        global $post;
+  global $post;
 
-        $logname = "log-".date('Y-m-d-G-i');
+  $logname = "log-".date('Y-m-d-G-i');
 
-        $updatelog = fopen($logname.".txt", "w");
+  //$updatelog = fopen($logname.".txt", "w");
 
-        foreach ($products as $product){
+  foreach ($products as $product):
 
-           $args = array(
-                   'post_type' => array('product', 'product_variation'),
-                   'posts_per_page' => -1,
-                   'meta_key' => '_sku',
-                   'meta_value' => str_replace('"', '', stripslashes($product[3])),
-               );
+    $args = array(
+             'post_type' => array('product', 'product_variation'),
+             'posts_per_page' => -1,
+             'meta_key' => '_sku',
+             'meta_value' => str_replace('"', '', stripslashes($product[3])),
+         );
 
-           print_r($args);
+    $prodq = new WP_Query($args);
 
-           $prodq = new WP_Query($args);
+    if ($prodq->have_posts() ) : 
+      while ($prodq->have_posts()): $prodq->the_post();
 
-          if ($prodq->have_posts() ) { 
-               while ($prodq->have_posts()): $prodq->the_post();
+        $quantity = str_replace('"', '', stripslashes($product[8]));
+        settype($quantity, "integer");
 
-                   print_r($post);
 
-                   $custom_meta = get_post_meta($post->ID); 
+        if( "" != $product[3]) :
+          update_post_meta($post->ID, '_stock', $quantity);
+        endif; 
 
-                   update_post_meta($post->ID, '_stock', str_replace('"', '', stripslashes($product[8])));
-
-                 /* echo "<pre>"; 
-                   print_r($product); 
-                   echo "</pre>";*/
-
-                   fwrite($updatelog, "Line: ".$product[0].", SKU: ".$product[3]." updated.".PHP_EOL);
-               endwhile;
-           } else {
-            
-               echo "Line: ".$product[0].", SKU: ".$product[3]." not found.<br  />";
-               fwrite($updatelog, "Line: ".$product[0].", SKU: ".$product[3]." not found.".PHP_EOL);
-           };
-                               
-                       
-       }
-       fclose($updatelog);
-       wp_reset_query();
+             //fwrite($updatelog, print_r($post, true));
+             //fwrite($updatelog, "Quantity:".$quantity." ");
+             //fwrite($updatelog, "Line: ".$product[0].", SKU: ".$product[3]. " updated.".PHP_EOL);
+      endwhile;
+      wp_reset_postdata(); 
+    else : 
+      
+        // echo "Line: ".$product[0].", SKU: ".$product[3]." not found.<br  />";
+        // fwrite($updatelog, "Line: ".$product[0].", SKU: ".$product[3]." not found.".PHP_EOL);
+    endif;
+   wp_reset_query();                      
+              
+endforeach;
+// fclose($updatelog);
 }
 
 function return_latest_orders( $id ) {

@@ -18,7 +18,7 @@
 <?php $box_slider_meta = kushi_fp_box_meta($post->ID); ?>
 
 <div class="container">
-	<div class="strapline" id="">
+	<div class="strapline" id="strapline">
 		<?php $strapline_heading = get_post_meta( $post->ID, 'strapline_heading', false); ?>
 		<?php if ($strapline_heading) : ?>
 			<h2><?php echo $strapline_heading[0];  ?></h2>
