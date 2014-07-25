@@ -87,18 +87,46 @@
 		</div>	
 	</div>-->
 	<div class="strapline">
+		<?php $strapline_image = get_post_meta( $post->ID, 'strapline_image_2', false); ?>
 		<?php $strapline_heading = get_post_meta( $post->ID, 'strapline_heading_2', false); ?>
-		<?php if ($strapline_heading) : ?>
-			<h2><?php echo $strapline_heading[0];  ?></h2>
+		<?php $strapline_content = get_post_meta( $post->ID, 'strapline_content_2', false); ?>
+		<?php if( isset($strapline_image) && !empty($strapline_image ) ) : ?>
+			<div class="wpb_row vc_row-fluid" style="text-align:left;">
+				<div class="vc_span4 wpb_column column_container">
+					<div class="strapline_inner">
+					<div class="wpb_wrapper">
+						<?php echo wp_get_attachment_image( $strapline_image[0], 'large' ); ?>
+					</div> 
+					</div>
+				</div> 
+				<div class="vc_span8 wpb_column column_container">
+					<div class="wpb_wrapper">
+						<div class="strapline_inner">
+							<?php if ($strapline_heading) : ?>
+								<h2><?php echo $strapline_heading[0];  ?></h2>
+							<?php endif; ?>
+												
+							<?php if ($strapline_content) : ?>
+								<p> 	
+									<?php echo $strapline_content[0];  ?>
+								</p>
+							<?php endif; ?>
+						</div>
+					</div> 
+				</div> 
+			</div>	
+		<?php else: ?>
+			<?php if ($strapline_heading) : ?>
+				<h2><?php echo $strapline_heading[0];  ?></h2>
+			<?php endif; ?>
+			<div class="strapline_inner">
+				<p> 		
+					<?php if ($strapline_content) : ?>
+						<?php echo $strapline_content[0];  ?>
+					<?php endif; ?>
+				</p>
+			</div>
 		<?php endif; ?>
-		<div class="strapline_inner">
-			<p> 
-				<?php $strapline_content = get_post_meta( $post->ID, 'strapline_content_2', false); ?>
-				<?php if ($strapline_content) : ?>
-					<?php echo $strapline_content[0];  ?>
-				<?php endif; ?>
-			</p>
-		</div>
 	</div>
 </div>
 
