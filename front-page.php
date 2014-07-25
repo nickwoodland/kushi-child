@@ -19,13 +19,13 @@
 
 <div class="container">
 	<div class="strapline" id="strapline">
-		<?php $strapline_heading = get_post_meta( $post->ID, 'strapline_heading', false); ?>
-		<?php if ($strapline_heading) : ?>
-			<h2><?php echo $strapline_heading[0];  ?></h2>
+		<?php $strapline_heading_1 = get_post_meta( $post->ID, 'strapline_heading_1', false); ?>
+		<?php if ($strapline_heading_1) : ?>
+			<h2><?php echo $strapline_heading_1[0];  ?></h2>
 		<?php endif; ?>
 		<div class="strapline_inner">
 			<p> 
-				<?php $strapline_content = get_post_meta( $post->ID, 'strapline_content', false); ?>
+				<?php $strapline_content = get_post_meta( $post->ID, 'strapline_content_1', false); ?>
 				<?php if ($strapline_content) : ?>
 					<?php echo $strapline_content[0];  ?>
 				<?php endif; ?>
@@ -72,19 +72,33 @@
 			</div>
 		</div>
 	</div>
-	<div class="container container_inner container_frontpage clearfix">
+	<!--<div class="container container_inner container_frontpage clearfix">
 		<div class="wpb_row vc_row-fluid" style="text-align:left;">
 			<div class="vc_span6 wpb_column column_container">
 				<div class="wpb_wrapper">
-					<?php the_content(); ?>
+					<?php //the_content(); ?>
 				</div> 
 			</div> 
 			<div class="vc_span6 wpb_column column_container">
 				<div class="wpb_wrapper">
-					<?php the_post_thumbnail(); ?>
+					<?php// the_post_thumbnail(); ?>
 				</div> 
 			</div> 
 		</div>	
+	</div>-->
+	<div class="strapline">
+		<?php $strapline_heading = get_post_meta( $post->ID, 'strapline_heading_2', false); ?>
+		<?php if ($strapline_heading) : ?>
+			<h2><?php echo $strapline_heading[0];  ?></h2>
+		<?php endif; ?>
+		<div class="strapline_inner">
+			<p> 
+				<?php $strapline_content = get_post_meta( $post->ID, 'strapline_content_2', false); ?>
+				<?php if ($strapline_content) : ?>
+					<?php echo $strapline_content[0];  ?>
+				<?php endif; ?>
+			</p>
+		</div>
 	</div>
 </div>
 

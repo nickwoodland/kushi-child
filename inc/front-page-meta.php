@@ -64,20 +64,57 @@ function cmb_strapline_metaboxes( array $meta_boxes ) {
 
                 array(
                     'name' => 'Strapline Heading',
-                    'id' => $prefix . 'heading',
+                    'id' => $prefix . 'heading_1',
                     'type' => 'text',
                 ),
 
                 array( 
                     'name' => 'Strapline Content',
-                    'id' => $prefix . 'content',
+                    'id' => $prefix . 'content_1',
                     'type' => 'textarea',
-                )
+                ),
+                array( 
+                    'name' => 'Strapline Image',
+                    'id' => $prefix . 'image_1',
+                    'type' => 'image',
+                ),
             );
 
     $meta_boxes[] = array(
-        'id' => $prefix.'group', //used just for storage
-        'title' => 'Strapline',
+        'id' => $prefix.'group_1', //used just for storage
+        'title' => 'Strapline 1',
+        'pages'      => array( 'page' ), // Post type
+        'context' => 'normal',
+        'priority' => 'high',
+        'show_names' => true, // show field names on the left
+        'show_on'    => array( 'key' => 'id', 'value' => '83' ), // Specific post IDs to display this metabox
+        'fields' => $fields
+    );
+
+
+    $fields =   array(
+
+                array(
+                    'name' => 'Strapline Heading',
+                    'id' => $prefix . 'heading_2',
+                    'type' => 'text',
+                ),
+
+                array( 
+                    'name' => 'Strapline Content',
+                    'id' => $prefix . 'content_2',
+                    'type' => 'textarea',
+                ),
+                array( 
+                    'name' => 'Strapline Image',
+                    'id' => $prefix . 'image_2',
+                    'type' => 'image',
+                ),
+            );
+
+    $meta_boxes[] = array(
+        'id' => $prefix.'group_2', //used just for storage
+        'title' => 'Strapline 2',
         'pages'      => array( 'page' ), // Post type
         'context' => 'normal',
         'priority' => 'high',
