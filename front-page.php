@@ -42,7 +42,8 @@
 				<div class="vc_span4 wpb_column column_container">
 					<div class="strapline_inner">
 						<div class="wpb_wrapper">
-							<?php echo wp_get_attachment_image( $strapline_image[0], 'large' ); ?>
+							<?php $size = array(290,220); ?>
+							<?php echo wp_get_attachment_image( $strapline_image[0], $size ); ?>
 						</div> 
 					</div>
 				</div> 
@@ -64,7 +65,8 @@
 		<div class="projects_holder_outer v4" >
 			<div class="projects_holder clearfix v4 hover_text no_space">
 				<?php foreach ($box_slider_meta as $box_meta) : ?>
-					<?php $box_image = wp_get_attachment_image_src($box_meta['image'],'large',false); ?>
+					<?php $size = array(300,300); ?>
+					<?php $box_image = wp_get_attachment_image_src($box_meta['image'],$size,false); ?>
 					<article class="mix street-art  mix_all">
 						<div class="image_holder">
 							<span class="image">
@@ -123,7 +125,8 @@
 				<div class="vc_span4 wpb_column column_container">
 					<div class="strapline_inner">
 					<div class="wpb_wrapper">
-						<?php echo wp_get_attachment_image( $strapline_image[0], 'large' ); ?>
+						<?php $size = array(290,220); ?>
+						<?php echo wp_get_attachment_image( $strapline_image[0], $size ); ?>
 					</div> 
 					</div>
 				</div> 
