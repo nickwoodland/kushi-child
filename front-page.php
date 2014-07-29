@@ -61,7 +61,7 @@
 			</div>
 		<?php endif; ?>
 	</div>
-	<div class="container clearfix" id="boxes" name="boxes">
+	<div class="container clearfix" id="boxes" name="boxes" class="boxes">
 		<div class="projects_holder_outer v4" >
 			<div class="projects_holder clearfix v4 hover_text no_space">
 				<?php foreach ($box_slider_meta as $box_meta) : ?>
