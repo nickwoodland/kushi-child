@@ -8,23 +8,26 @@
 			<?php echo do_shortcode($revslider); ?>
 		</div>
 	</div>
-	<div class="main_cta">
-		<a href="#strapline">
-			Find Out More About Kushi...		
-		</a>
-	</div>
 <?php endif; ?>
 <?php // $box_slider_meta = get_post_meta( $post->ID, 'front_page_group', false ); ?>
 <?php $box_slider_meta = kushi_fp_box_meta($post->ID); ?>
 
 <div class="container">
-	<div class="strapline" id="strapline">
+	<div class="strapline strapline-dark" id="strapline">
 		<?php $strapline_image = get_post_meta( $post->ID, 'strapline_image_1', false); ?>
 		<?php $strapline_heading = get_post_meta( $post->ID, 'strapline_heading_1', false); ?>
 		<?php $strapline_content = get_post_meta( $post->ID, 'strapline_content_1', false); ?>
 		<?php if( isset($strapline_image) && !empty($strapline_image ) ) : ?>
 			<div class="wpb_row vc_row-fluid" style="text-align:left;">
-				<div class="vc_span8 wpb_column column_container">
+				<div class="vc_span6 wpb_column column_container">
+					<div class="strapline_inner">
+						<div class="wpb_wrapper">
+							<?php // $size = array(438,233); ?>
+							<?php echo wp_get_attachment_image( $strapline_image[0], 'full'); ?>
+						</div> 
+					</div>
+				</div> 
+				<div class="vc_span6 wpb_column column_container">
 					<div class="wpb_wrapper">
 						<div class="strapline_inner">
 							<?php if ($strapline_heading) : ?>
@@ -38,14 +41,6 @@
 							<?php endif; ?>
 						</div>
 					</div> 
-				</div> 
-				<div class="vc_span4 wpb_column column_container">
-					<div class="strapline_inner">
-						<div class="wpb_wrapper">
-							<?php $size = array(290,220); ?>
-							<?php echo wp_get_attachment_image( $strapline_image[0], $size ); ?>
-						</div> 
-					</div>
 				</div> 
 			</div>	
 		<?php else: ?>
@@ -116,7 +111,7 @@
 			</div> 
 		</div>	
 	</div>-->
-	<div class="strapline">
+	<div class="strapline strapline-light">
 		<?php $strapline_image = get_post_meta( $post->ID, 'strapline_image_2', false); ?>
 		<?php $strapline_heading = get_post_meta( $post->ID, 'strapline_heading_2', false); ?>
 		<?php $strapline_content = get_post_meta( $post->ID, 'strapline_content_2', false); ?>
