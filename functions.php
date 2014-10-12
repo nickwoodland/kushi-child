@@ -47,7 +47,24 @@ Function kushi_fp_box_meta($fpid) {
 	}
 }
 
-Function kushi_footer_logo_meta($counter, $term) {
+Function kushi_fp_brands_meta($fpid) {
+
+  if ( false === ( $fp_brands_meta = get_transient( 'kushi_fp_brands_meta' ) ) ) {
+
+    $fp_brands_meta = get_post_meta( $fpid, 'strapline_brands_group', false );
+      set_transient('kushi_fp_brands_meta', $fp_brands_meta, 60 * 60 * 1); // Stored for one hour
+
+      return $fp_brands_meta;
+  }
+
+  else
+  {
+
+      return $fp_brands_meta;    
+  }
+}
+
+/*Function kushi_footer_logo_meta($counter, $term) {
 
 	$transient_name = "kushi_footer_logo_meta".$counter;
 
@@ -68,7 +85,7 @@ Function kushi_footer_logo_meta($counter, $term) {
 
     	return $image;   	
 	}
-}
+}*/
 
 
 function wpse61738_non_cached_stylesheet()
