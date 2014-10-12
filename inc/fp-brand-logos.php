@@ -2,10 +2,6 @@
 $brands = kushi_fp_brands_meta($post->ID); 
 ?>
 
-<pre>
-	<?php print_r($brands); ?>
-</pre>
-
 <?php foreach ($brands as $brand) : ?>
 	<?php $brand_link = $brand['strapline_brand_link']; ?>
 	<?php $brand_img = wp_get_attachment_image_src($brand['strapline_brand_image'], 'full'); ?>
