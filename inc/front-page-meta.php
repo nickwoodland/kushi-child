@@ -92,41 +92,35 @@ function cmb_strapline_metaboxes( array $meta_boxes ) {
     );
 
 
-    $fields2 =   array(
+    $fields =   array(
 
-                array( 
-                    'name' => 'Brand Image',
-                    'id' => $prefix . 'brand_image',
-                    'type' => 'image',
+                array(
+                    'name' => 'Strapline Heading',
+                    'id' => $prefix . 'heading_2',
+                    'type' => 'text',
                 ),
 
                 array( 
-                    'name' => 'Brand link',
-                    'id' => $prefix . 'brand_link',
-                    'type' => 'url',
+                    'name' => 'Strapline Content',
+                    'id' => $prefix . 'content_2',
+                    'type' => 'textarea',
+                ),
+                array( 
+                    'name' => 'Strapline Image',
+                    'id' => $prefix . 'image_2',
+                    'type' => 'image',
                 ),
             );
 
     $meta_boxes[] = array(
         'id' => $prefix.'group_2', //used just for storage
-        'title' => 'Brands Strapline',
-        'pages' => array( 'page' ), // Post type
+        'title' => 'Strapline 2',
+        'pages'      => array( 'page' ), // Post type
         'context' => 'normal',
         'priority' => 'high',
         'show_names' => true, // show field names on the left
         'show_on'    => array( 'key' => 'id', 'value' => '83' ), // Specific post IDs to display this metabox
-        'fields' => array(
-
-                        array(
-                        'id' => $prefix.'brands_group',
-                        'name' => 'Configure Brands Strapline',
-                        'type' => 'group',
-                        'fields' => $fields2,
-                        'repeatable' => true,
-                        'repeatable_max' => 6
-                        ),
-
-                    ),
+        'fields' => $fields
     );
 
     return $meta_boxes;

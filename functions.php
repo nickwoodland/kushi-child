@@ -184,4 +184,12 @@ function return_latest_orders( $id ) {
 
 }
 
+add_filter( 'woocommerce_product_add_to_cart_text', 'woo_archive_custom_cart_button_text' );
+ 
+function woo_archive_custom_cart_button_text() {
+ 
+        return __( 'Buy Now', 'woocommerce' );
+ 
+}
+
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );

@@ -103,7 +103,8 @@
 		</div>
 
 		<div class="strapline_brands">
-			<a href="">
+			<?php $brands_page = get_page_by_path('brands'); ?>
+			<a href="<?php echo get_permalink($brands_page->ID); ?>">
 				View All Brands
 			</a>
 		</div>
